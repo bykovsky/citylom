@@ -18,6 +18,7 @@ const browserSync = require('browser-sync').create()
 /* Projects paths */
 const buildPath = 'build';
 const devPath = 'dev';
+const assetsPath = 'dev/assets/benefits';
 
 /*
   DEV PIPES
@@ -37,7 +38,7 @@ const stylesDev = () => {
     .pipe(concat('styles.css'))
     .pipe(autoprefixer({cascade: false }))
     .pipe(sourcemaps.write())
-    .pipe(dest(devPath + '/css'))
+    .pipe(dest(assetsPath + '/css'))
     .pipe(browserSync.stream())
 }
 
@@ -55,13 +56,13 @@ const scriptsDev = () => {
     .pipe(sourcemaps.init())
     .pipe(concat('scripts.js'))
     .pipe(sourcemaps.write())
-    .pipe(dest(devPath + '/js'))
+    .pipe(dest(assetsPath + '/js'))
     .pipe(browserSync.stream())
 }
 
 const fontsDev = () => {
   return src('src/fonts/**/*.*')
-    .pipe(dest(devPath + '/fonts'))
+    .pipe(dest(assetsPath + '/fonts'))
     .pipe(browserSync.stream())
 }
 
@@ -70,7 +71,7 @@ const imagesDev = () => {
     'src/img/**/*.svg'
   ])
     .pipe(image())
-    .pipe(dest(devPath + '/img'))
+    .pipe(dest(assetsPath + '/img'))
     .pipe(browserSync.stream())
 }
 
@@ -79,11 +80,11 @@ const svgSpritesDev = () => {
     .pipe(svgSprite({
       mode: {
         stack: {
-          sprite: 'sprite.svg'
+          sprite: '../sprite.svg'
         }
       }
     }))
-    .pipe(dest(devPath + '/img'))
+    .pipe(dest(assetsPath + '/img'))
 }
 
 const images2webpDev = () => {
@@ -93,7 +94,7 @@ const images2webpDev = () => {
     'src/img/**/*.gif'
   ])
     .pipe(webpImages())
-    .pipe(dest(devPath + '/img'))
+    .pipe(dest(assetsPath + '/img'))
     .pipe(browserSync.stream())
 }
 
