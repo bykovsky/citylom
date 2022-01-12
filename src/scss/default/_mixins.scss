@@ -1,0 +1,12 @@
+// SCSS MIXINS
+@mixin resetList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}

@@ -1,0 +1,146 @@
+//VARS
+$main-background: #F6F6FF;
+
+$main-black: #000000;
+$shade-black: #3C3C3C;
+$main-orange: #FF9A02;
+$pale-orange: #FBEFE2;
+
+.benefits {
+  position: relative;
+  padding-top: 100px;
+  padding-bottom: 60px;
+  background-color: $main-background;
+  font-family: $font;
+  font-weight: 600;
+  color: $main-black;
+  border-radius: 6px;
+
+
+  &__title {
+    position: relative;
+    display: block;
+    margin: 0 0 40px 0;
+    text-align: center;
+    font-weight: 800;
+    font-size: 36px;
+    line-height: 100%;
+
+    &-highlight {
+      color: $main-orange;
+    }
+  }
+
+  &__grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 30px;
+    grid-template-areas:  "b1 bg bg b8"
+                          "b2 bg bg b7"
+                          "b3 b4 b5 b6";
+    background-image: url("../img/benefits-img.webp");
+    background-position: top center;
+    background-repeat: no-repeat;
+  }
+
+  &__block {
+    &--img {
+      grid-area: bg;
+    }
+
+    &--01 {
+      grid-area: b1;
+    }
+
+    &--02 {
+      grid-area: b2;
+    }
+
+    &--03 {
+      grid-area: b3;
+    }
+
+    &--04 {
+      grid-area: b4;
+      transform: translateY(-120px);
+    }
+
+    &--05 {
+      grid-area: b5;
+      transform: translateY(-120px);
+    }
+
+    &--06 {
+      grid-area: b6;
+    }
+
+    &--07 {
+      grid-area: b7;
+    }
+
+    &--08 {
+      grid-area: b8;
+    }
+  }
+}
+
+.benefits-block {
+  padding-top: 40px;
+
+  &__wrapper {
+    position: relative;
+    min-height: 220px;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: white;
+  }
+
+  &__icon {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    min-width: 80px;
+    min-height: 80px;
+    max-width: 80px;
+    max-height: 80px;
+    border-radius: 80px;
+    border-width: 8px;
+    border-style: solid;
+    border-color: $main-background;
+    background-color: $main-orange;
+    line-height: 80px;
+    transform: translate(-50%, -50%);
+  }
+
+  &__svg {
+    max-width: 40px;
+    max-height: 40px;
+  }
+
+  &__counter {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    width: 32px;
+    height: 32px;
+    border-radius: 100%;
+    line-height: 32px;
+    background-color: $pale-orange;
+  }
+
+  &__text {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 140%;
+    text-align: center;
+  }
+}

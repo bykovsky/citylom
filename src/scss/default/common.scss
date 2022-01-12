@@ -1,0 +1,14 @@
+@import "_variables";
+@import "_mixins";
+
+body {
+  font-family: $font;
+}
+
+.content {
+  max-width: 1190px;
+  min-width: 1190px;
+  margin: 0 auto;
+  padding: 0 8px;
+  position: relative;
+}
